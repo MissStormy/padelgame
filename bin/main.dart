@@ -6,7 +6,7 @@ import 'package:padelgame/modelos/partido.dart';
 void main(List<String> args) {
   //Instancias
   Vistas menus = new Vistas();
-
+  Partido partido = new Partido();
   //Valores
   String? opcMM;
   //Programa
@@ -15,7 +15,7 @@ void main(List<String> args) {
   while (opcMM != "3") {
     menus.mainMenu(); 
     opcMM = stdin.readLineSync();
-    menus.choiceMainMenu(opcMM);
+    menus.choiceMainMenu(opcMM, partido);
   }
 }
 

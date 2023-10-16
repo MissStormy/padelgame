@@ -16,34 +16,32 @@ class Vistas {
   }
 
   //Menu de entrada (elecciones)
-  void choiceMainMenu(String? opcMM) {
+  void choiceMainMenu(String? opcMM, Partido partido) {
     Vistas menus = new Vistas();
-
+    
     switch (opcMM) {
       case "1":
         print("Configuración de partido");
         print("------------------------");
-        print("1. Dale nombre a tus jugadores (opcional)");
-        print("2. Elige el numero de sets (obligatorio)");
-        print("3. Volver");
-        int? num = stdin.readByteSync();
-        if (num == 1) {
-          print("Dale un nombre a tu jugador local");
-          //jugador1 = stdin.readLineSync();
-          print("Dale un nombre al jugador visitante");
-          //jugador2 = stdin.readLineSync();
-        } else if (num == 2) {
-          print("Cuantos sets quieres?");
-          //numSets = stdin.readByteSync();
-        } else {
-          menus.mainMenu();
-        }
+
+        print("Dale un nombre a tu jugador local");
+        partido.jugador1 = (stdin.readLineSync() ?? "Firulais");
+        print("Dale un nombre al jugador visitante");
+        partido.jugador2 = (stdin.readLineSync() ?? "Agapito");
+        print(partido.jugador1 + " " + partido.jugador2);
+        print("Cuantos sets quieres?");
+        partido.sets = (stdin.readByteSync());
+
+
         break;
       case "2":
         menus.cleanScreen();
-        Partido partido = new Partido();
+
         bool? finalPartido = false;
-        print("Partido jugado por: " + partido.getJugador1 + " y " + partido.getJugador2);
+        print("Partido jugado por: " +
+            partido.getJugador1 +
+            " y " +
+            partido.getJugador2);
         print("A " + partido.getSets.toString() + " sets");
         while (finalPartido != true) {
           String? opcP;

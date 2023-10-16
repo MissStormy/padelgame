@@ -13,24 +13,20 @@ class Partido {
   int puntoLocal = 0;
   int puntoVisitante = 0;
   bool? finalPartido = false;
-  String jugador1 = "Firulais";
-  String jugador2 = "Agapito di Sousa";
-  int sets = 6;
+  late String jugador1;
+  late String jugador2;
+  late int sets;
 
-  //Jugadores default x si se olvidan de meterlos
-  String defJug1 = "Firulais";
-  String defJug2 = "Agapito di Sousa";
-  int defSets = 6;
 
   //Constructores
 
-  partido(String jugador1, String jugador2, int sets) {
+  partido() {
     this.puntoLocal = puntoLocal;
     this.puntoVisitante = puntoVisitante;
     this.finalPartido = finalPartido;
-    this.jugador1 = defJug1;
-    this.jugador2 = defJug2;
-    this.sets = defSets;
+    this.jugador1 = jugador1;
+    this.jugador2 = jugador2;
+    this.sets = sets;
   }
 
   //Metodos
